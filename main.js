@@ -14,14 +14,22 @@ let currentPhonePriceNumber = parseFloat(currentPhonePrice);
 // plus minus button event handler for iphone
 phonePlusBtn.addEventListener('click', function () {
     
+
+
     currentPhoneQuantityNumber = currentPhoneQuantityNumber + 1;
     document.getElementById('phoneQuantity').value = currentPhoneQuantityNumber;
+
 
     currentPhonePriceNumber = currentPhonePriceNumber + 1219;
     document.getElementById('phonePrice').innerText = currentPhonePriceNumber;
 
     
 });
+
+
+
+
+
 
 phoneMinusBtn.addEventListener('click', function () {
 
@@ -94,4 +102,22 @@ check.addEventListener('click', function () {
     totalAmount = subtotalAmount + taxAmount;
     document.getElementById('total').innerText = totalAmount;
 
+})
+
+
+
+
+
+// onchange event handler added
+
+document.getElementById('phoneQuantity').addEventListener('change', function () {
+    let changePhoneQuantity = document.getElementById('phoneQuantity').value;
+    currentPhonePriceNumber = changePhoneQuantity * 1219;
+    document.getElementById('phonePrice').innerText = currentPhonePriceNumber;
+})
+
+document.getElementById('caseQuantity').addEventListener('change', function () {
+    let changeCaseQuantity = document.getElementById('caseQuantity').value;
+    currentCasePriceNumber = changeCaseQuantity * 59;
+    document.getElementById('casePrice').innerText = currentCasePriceNumber;
 })
